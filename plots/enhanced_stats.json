@@ -1,0 +1,310 @@
+{
+  "friedman_chi2": 24.569635627530346,
+  "friedman_p": 0.003486011333462251,
+  "mean_ranks": {
+    "fedavg": {
+      "mean_rank": 5.5,
+      "bootstrap_ci_95": [
+        4.033333333333333,
+        7.0
+      ],
+      "n_scenarios": 15
+    },
+    "flame": {
+      "mean_rank": 5.333333333333333,
+      "bootstrap_ci_95": [
+        3.8666666666666667,
+        6.866666666666666
+      ],
+      "n_scenarios": 15
+    },
+    "fltrust": {
+      "mean_rank": 4.633333333333334,
+      "bootstrap_ci_95": [
+        3.466666666666667,
+        5.833333333333333
+      ],
+      "n_scenarios": 15
+    },
+    "foolsgold": {
+      "mean_rank": 5.433333333333334,
+      "bootstrap_ci_95": [
+        3.8666666666666667,
+        6.933333333333334
+      ],
+      "n_scenarios": 15
+    },
+    "geometric_median": {
+      "mean_rank": 5.0,
+      "bootstrap_ci_95": [
+        3.6,
+        6.366666666666666
+      ],
+      "n_scenarios": 15
+    },
+    "krum": {
+      "mean_rank": 8.666666666666666,
+      "bootstrap_ci_95": [
+        8.0,
+        9.333333333333334
+      ],
+      "n_scenarios": 15
+    },
+    "multi_krum": {
+      "mean_rank": 5.333333333333333,
+      "bootstrap_ci_95": [
+        3.933333333333333,
+        6.733333333333333
+      ],
+      "n_scenarios": 15
+    },
+    "sage": {
+      "mean_rank": 3.6,
+      "bootstrap_ci_95": [
+        2.2666666666666666,
+        5.2
+      ],
+      "n_scenarios": 15
+    },
+    "trimmed_mean": {
+      "mean_rank": 5.466666666666667,
+      "bootstrap_ci_95": [
+        4.466666666666667,
+        6.566666666666666
+      ],
+      "n_scenarios": 15
+    },
+    "trust_weighted": {
+      "mean_rank": 6.033333333333333,
+      "bootstrap_ci_95": [
+        4.9,
+        7.166666666666667
+      ],
+      "n_scenarios": 15
+    }
+  },
+  "pairwise_vs_sage": {
+    "fedavg": {
+      "n_pairs": 15,
+      "wilcoxon_stat": 32.0,
+      "p_raw": 0.12054443359375,
+      "cliffs_delta": 0.15555555555555556,
+      "effect_size": "small",
+      "sage_wins": 12,
+      "ties": 0,
+      "baseline_wins": 3,
+      "p_holm": 0.6419677734375,
+      "p_bh": 0.21697998046875,
+      "significance": "n.s.",
+      "significance_bh": "n.s."
+    },
+    "flame": {
+      "n_pairs": 15,
+      "wilcoxon_stat": 40.0,
+      "p_raw": 0.27685546875,
+      "cliffs_delta": 0.1288888888888889,
+      "effect_size": "negligible",
+      "sage_wins": 10,
+      "ties": 0,
+      "baseline_wins": 5,
+      "p_holm": 1.0,
+      "p_bh": 0.31146240234375,
+      "significance": "n.s.",
+      "significance_bh": "n.s."
+    },
+    "fltrust": {
+      "n_pairs": 15,
+      "wilcoxon_stat": 43.0,
+      "p_raw": 0.359130859375,
+      "cliffs_delta": 0.022222222222222223,
+      "effect_size": "negligible",
+      "sage_wins": 9,
+      "ties": 0,
+      "baseline_wins": 6,
+      "p_holm": 1.0,
+      "p_bh": 0.359130859375,
+      "significance": "n.s.",
+      "significance_bh": "n.s."
+    },
+    "foolsgold": {
+      "n_pairs": 15,
+      "wilcoxon_stat": 39.0,
+      "p_raw": 0.25238037109375,
+      "cliffs_delta": 0.11555555555555555,
+      "effect_size": "negligible",
+      "sage_wins": 9,
+      "ties": 0,
+      "baseline_wins": 6,
+      "p_holm": 1.0,
+      "p_bh": 0.31146240234375,
+      "significance": "n.s.",
+      "significance_bh": "n.s."
+    },
+    "geometric_median": {
+      "n_pairs": 15,
+      "wilcoxon_stat": 39.0,
+      "p_raw": 0.25238037109375,
+      "cliffs_delta": 0.04888888888888889,
+      "effect_size": "negligible",
+      "sage_wins": 9,
+      "ties": 0,
+      "baseline_wins": 6,
+      "p_holm": 1.0,
+      "p_bh": 0.31146240234375,
+      "significance": "n.s.",
+      "significance_bh": "n.s."
+    },
+    "krum": {
+      "n_pairs": 15,
+      "wilcoxon_stat": 1.0,
+      "p_raw": 0.0001220703125,
+      "cliffs_delta": 0.24888888888888888,
+      "effect_size": "small",
+      "sage_wins": 14,
+      "ties": 0,
+      "baseline_wins": 1,
+      "p_holm": 0.0010986328125,
+      "p_bh": 0.0010986328125,
+      "significance": "**",
+      "significance_bh": "**"
+    },
+    "multi_krum": {
+      "n_pairs": 15,
+      "wilcoxon_stat": 31.0,
+      "p_raw": 0.10699462890625,
+      "cliffs_delta": 0.04,
+      "effect_size": "negligible",
+      "sage_wins": 11,
+      "ties": 0,
+      "baseline_wins": 4,
+      "p_holm": 0.6419677734375,
+      "p_bh": 0.21697998046875,
+      "significance": "n.s.",
+      "significance_bh": "n.s."
+    },
+    "trimmed_mean": {
+      "n_pairs": 15,
+      "wilcoxon_stat": 26.0,
+      "p_raw": 0.05535888671875,
+      "cliffs_delta": 0.17333333333333334,
+      "effect_size": "small",
+      "sage_wins": 11,
+      "ties": 0,
+      "baseline_wins": 4,
+      "p_holm": 0.38751220703125,
+      "p_bh": 0.16607666015625,
+      "significance": "n.s.",
+      "significance_bh": "n.s."
+    },
+    "trust_weighted": {
+      "n_pairs": 15,
+      "wilcoxon_stat": 22.0,
+      "p_raw": 0.0301513671875,
+      "cliffs_delta": 0.13777777777777778,
+      "effect_size": "negligible",
+      "sage_wins": 11,
+      "ties": 0,
+      "baseline_wins": 4,
+      "p_holm": 0.2412109375,
+      "p_bh": 0.13568115234375,
+      "significance": "n.s.",
+      "significance_bh": "n.s."
+    }
+  },
+  "sage_summary": {
+    "n_scenarios": 15,
+    "n_first_place": 4,
+    "pct_first_place": 26.7,
+    "n_top3": 10,
+    "pct_top3": 66.7,
+    "n_bottom3": 3
+  },
+  "per_environment": {
+    "simple_adversary_v3": {
+      "fedavg": 5.6,
+      "flame": 4.4,
+      "fltrust": 4.8,
+      "foolsgold": 5.2,
+      "geometric_median": 3.8,
+      "krum": 9.2,
+      "multi_krum": 7.2,
+      "sage": 3.8,
+      "trimmed_mean": 6.0,
+      "trust_weighted": 5.0
+    },
+    "simple_spread_v3": {
+      "fedavg": 6.8,
+      "flame": 6.2,
+      "fltrust": 3.8,
+      "foolsgold": 6.2,
+      "geometric_median": 5.6,
+      "krum": 8.2,
+      "multi_krum": 2.8,
+      "sage": 4.0,
+      "trimmed_mean": 5.2,
+      "trust_weighted": 6.2
+    },
+    "simple_tag_v3": {
+      "fedavg": 4.1,
+      "flame": 5.4,
+      "fltrust": 5.3,
+      "foolsgold": 4.9,
+      "geometric_median": 5.6,
+      "krum": 8.6,
+      "multi_krum": 6.0,
+      "sage": 3.0,
+      "trimmed_mean": 5.2,
+      "trust_weighted": 6.9
+    }
+  },
+  "per_attack": {
+    "adaptive_strategic": {
+      "fedavg": 3.3333333333333335,
+      "flame": 4.666666666666667,
+      "fltrust": 4.5,
+      "foolsgold": 5.666666666666667,
+      "geometric_median": 8.166666666666666,
+      "krum": 9.0,
+      "multi_krum": 7.666666666666667,
+      "sage": 4.333333333333333,
+      "trimmed_mean": 4.166666666666667,
+      "trust_weighted": 3.5
+    },
+    "none": {
+      "fedavg": 5.0,
+      "flame": 5.333333333333333,
+      "fltrust": 6.666666666666667,
+      "foolsgold": 8.0,
+      "geometric_median": 1.6666666666666667,
+      "krum": 8.666666666666666,
+      "multi_krum": 5.666666666666667,
+      "sage": 4.0,
+      "trimmed_mean": 3.6666666666666665,
+      "trust_weighted": 6.333333333333333
+    },
+    "normalized": {
+      "fedavg": 7.0,
+      "flame": 8.666666666666666,
+      "fltrust": 4.833333333333333,
+      "foolsgold": 1.3333333333333333,
+      "geometric_median": 5.333333333333333,
+      "krum": 7.666666666666667,
+      "multi_krum": 5.666666666666667,
+      "sage": 1.6666666666666667,
+      "trimmed_mean": 5.833333333333333,
+      "trust_weighted": 7.0
+    },
+    "sign_flip": {
+      "fedavg": 6.083333333333333,
+      "flame": 4.0,
+      "fltrust": 3.5833333333333335,
+      "foolsgold": 6.083333333333333,
+      "geometric_median": 4.916666666666667,
+      "krum": 9.0,
+      "multi_krum": 3.8333333333333335,
+      "sage": 4.0,
+      "trimmed_mean": 6.833333333333333,
+      "trust_weighted": 6.666666666666667
+    }
+  }
+}

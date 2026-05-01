@@ -1,0 +1,109 @@
+# Sweep configurations for systematic evaluation
+# Created: 2026-02-26
+#
+# This file defines parameter sweeps for the experiment runner.
+# Each sweep varies one or more dimensions while keeping others at default.
+
+# ---- Sweep 1: Attack comparison (fixed defense, varying attacks) ----
+sweep_attacks:
+  name: "attack_comparison"
+  base_config: "configs/default.yaml"
+  sweep_over:
+    attack.type:
+      - "none"
+      - "sign_flip"
+      - "scaling"
+      - "gaussian_noise"
+      - "directional"
+      - "reward_bias"
+      - "stale_update"
+  fixed:
+    aggregation.method: "trust_weighted"
+    federation.n_rounds: 200
+    federation.byzantine_fraction: 0.2
+
+# ---- Sweep 2: Defense comparison (fixed attack, varying defenses) ----
+sweep_defenses:
+  name: "defense_comparison"
+  base_config: "configs/default.yaml"
+  sweep_over:
+    aggregation.method:
+      - "fedavg"
+      - "trimmed_mean"
+      - "geometric_median"
+      - "trust_weighted"
+  fixed:
+    attack.type: "sign_flip"
+    federation.byzantine_fraction: 0.2
+
+# ---- Sweep 3: Byzantine fraction ----
+sweep_byzantine_fraction:
+  name: "byzantine_fraction"
+  base_config: "configs/default.yaml"
+  sweep_over:
+    federation.byzantine_fraction:
+      - 0.0
+      - 0.1
+      - 0.2
+      - 0.3
+      - 0.4
+  fixed:
+    attack.type: "sign_flip"
+    aggregation.method: "trust_weighted"
+
+# ---- Sweep 4: Number of clients (scalability) ----
+sweep_n_clients:
+  name: "n_clients"
+  base_config: "configs/default.yaml"
+  sweep_over:
+    federation.n_clients:
+      - 5
+      - 10
+      - 20
+      - 50
+  fixed:
+    federation.byzantine_fraction: 0.2
+    attack.type: "sign_flip"
+    aggregation.method: "trust_weighted"
+
+# ---- Sweep 5: Trust ablation ----
+sweep_trust_ablation:
+  name: "trust_ablation"
+  base_config: "configs/default.yaml"
+  sweep_over:
+    # Each entry is a dict of config overrides
+    _named_configs:
+      - name: "no_trust"
+        trust.enabled: false
+        aggregation.method: "trimmed_mean"
+      - name: "temporal_only"
+        trust.w_temporal: 1.0
+        trust.w_heterogeneity: 0.0
+        trust.w_audit: 0.0
+      - name: "hetero_only"
+        trust.w_temporal: 0.0
+        trust.w_heterogeneity: 1.0
+        trust.w_audit: 0.0
+      - name: "audit_only"
+        trust.w_temporal: 0.0
+        trust.w_heterogeneity: 0.0
+        trust.w_audit: 1.0
+      - name: "full_hatt"
+        trust.w_temporal: 0.4
+        trust.w_heterogeneity: 0.3
+        trust.w_audit: 0.3
+
+# ---- Sweep 6: Environment comparison ----
+sweep_environments:
+  name: "environment_comparison"
+  base_config: "configs/default.yaml"
+  sweep_over:
+    env.mpe_scenario:
+      - "simple_spread_v3"
+      - "simple_adversary_v3"
+      - "simple_tag_v3"
+  fixed:
+    env.type: "mpe"
+    attack.type: "sign_flip"
+    aggregation.method: "trust_weighted"
+    federation.byzantine_fraction: 0.2

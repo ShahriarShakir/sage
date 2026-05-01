@@ -1,0 +1,100 @@
+# Default configuration for FRL experiments
+# Created: 2026-02-26
+
+# ---- Experiment metadata ----
+experiment:
+  name: "frl_default"
+  seed: 42
+  device: "cuda"  # "cpu" or "cuda"
+  log_dir: "logs/${experiment.name}"
+
+# ---- Environment ----
+env:
+  type: "mpe"  # "mpe", "smac", "gym"
+  # MPE settings
+  mpe_scenario: "simple_spread_v3"
+  mpe_max_cycles: 25
+  mpe_continuous: true
+  # SMAC settings
+  smac_map: "3m"
+  smac_max_steps: 200
+  # Gym settings (for debugging)
+  gym_id: "CartPole-v1"
+
+# ---- Federation ----
+federation:
+  n_clients: 6
+  n_rounds: 200
+  byzantine_fraction: 0.2  # fraction of Byzantine clients
+  eval_frequency: 5
+  eval_episodes: 10
+  save_frequency: 50
+
+# ---- Client (local training) ----
+client:
+  lr_actor: 3.0e-4
+  lr_critic: 1.0e-3
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_eps: 0.2
+  entropy_coef: 0.01
+  value_coef: 0.5
+  max_grad_norm: 0.5
+  local_epochs: 4
+  rollout_steps: 512
+  minibatch_size: 128
+  hidden_dims: [128, 128]
+
+# ---- Aggregation ----
+aggregation:
+  method: "trust_weighted"  # fedavg, trimmed_mean, geometric_median, trust_weighted
+  trim_fraction: 0.1
+  trust_threshold: 0.5
+  base_aggregator: "trimmed_mean"
+  filter_anomalous: true
+
+# ---- Trust (HATT) ----
+trust:
+  enabled: true
+  ema_beta: 0.8
+  high_threshold: 0.7
+  low_threshold: 0.5
+  hysteresis_window: 3
+  envelope_window: 10
+  z_score_threshold: 3.0
+  audit_frequency: 1
+  audit_steps: 100
+  audit_seeds: [42, 123, 456]
+  w_delta_effect: 0.40
+  w_coordinate_anomaly: 0.00
+  w_spectral: 0.12
+  w_population_dir: 0.18
+  w_temporal: 0.06
+  w_heterogeneity: 0.06
+  w_correlation: 0.18
+  trust_ema_beta: 0.7
+  adaptive_blend: 0.5
+
+# ---- Attack ----
+attack:
+  type: "sign_flip"  # none, sign_flip, scaling, gaussian_noise, directional, reward_bias, reward_sparse_trigger, stale_update, sybil, combined
+  # Sign-flip
+  sign_flip_scale: 1.0
+  # Scaling
+  scaling_factor: 10.0
+  # Gaussian noise
+  noise_std: 1.0
+  noise_relative: true
+  # Directional
+  directional_magnitude: 5.0
+  # Reward bias
+  reward_bias: 5.0
+  # Sparse trigger
+  trigger_prob: 0.05
+  trigger_reward: 20.0
+  # Stale update
+  delay_rounds: 5
+  dropout_prob: 0.0
+  # Sybil
+  sybil_inner_attack: "sign_flip"
+  n_sybils: 3
