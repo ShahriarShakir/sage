@@ -6,7 +6,7 @@ Byzantine-Robust Federated Multi-Agent Reinforcement Learning via
 Similarity-Aware Geometric Median".
 
 This archive mirrors the anonymous code repository referenced in the
-abstract at https://anonymous.4open.science/r/sage .
+abstract at https://anonymous.4open.science/r/sage-marl .
 Both distributions contain identical source; the ZIP is provided so
 reviewers can inspect the code offline.
 
@@ -170,7 +170,7 @@ comparison. The 180-experiment ablation uses seeds {42, 123, 456}.
 
 ## Anonymous code and reproducibility artifacts
 
-Anonymous code and reproducibility artifacts: https://anonymous.4open.science/r/sage
+Anonymous code and reproducibility artifacts: https://anonymous.4open.science/r/sage-marl
 
 ## License
 
